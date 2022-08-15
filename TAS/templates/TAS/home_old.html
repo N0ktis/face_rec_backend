@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    .home_container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+</style>
+
+<h1>HOME</h1>
+<div class="home_container">
+    <div>
+        <h3>Browse Users</h3>
+        <hr>
+        <div>
+            <a href="{% url 'home' %}">All</a>
+            {% for user in users %}
+            <div>
+                {% if request.user.user_id != user.user_id %}
+                <h5><a href="{% url 'about' user.user_id %}">{{user.full_name}}</a></h5>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+<!--        <h5>{{users_count}} users found</h5>
+        {% if request.user.is_boss %}
+        <a href="{% url 'add_user' user.user_id%}">Add Worker</a>
+        {% endif %}
+        <div>
+            {% for user in users %}
+            <div>
+                <h5>{{user.email}} -- <a href="{% url 'about' user.user_id %}">{{user.full_name}}</a></h5>
+                {% if request.user.user_id != user.user_id and request.user.is_boss%}
+                <a href="{% url 'update_user' user.user_id %}">Edit</a>
+                <a href="{% url 'delete_user' user.user_id %}">Delete</a>
+                {% endif %}
+            </div>
+            {% endfor %}-->
+        </div>
+    </div>
+
+</div>
+{% endblock content%}
+
+</body>
+</html>
