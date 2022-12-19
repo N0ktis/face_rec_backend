@@ -53,7 +53,7 @@ class User(AbstractUser):
     is_sick = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
     class Meta:
         ordering = ['-updated', '-full_name']

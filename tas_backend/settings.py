@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'tas_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tas',
-        'USER': 'postgres',
-        'PASSWORD': '317a251',
+        'NAME': 'facerecdb',
+        'USER': 'sasha',
+        'PASSWORD': '12345678',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
